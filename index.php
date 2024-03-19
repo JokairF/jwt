@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    session_unset();
+session_start();
+session_unset();
 
 // Vérification des informations d'identification (utilisation de valeurs codées en dur)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_password = $_POST["password"];
 
     if ($input_username === $username && $input_password === $password) {
-      
-        $_SESSION["username"]= $input_username;
+
+        $_SESSION["username"] = $input_username;
 
         // Authentification réussie, redirigez vers la page sécurisée
         header("Location: secure_page.php");
@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: 100vh;
             background-color: #f4f4f4;
         }
+
         .container {
             width: 300px;
             padding: 20px;
@@ -48,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
@@ -57,16 +60,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 1px solid #ccc;
             border-radius: 3px;
         }
+
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
         }
+
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Connexion</h2>
@@ -80,4 +86,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </body>
+
 </html>
