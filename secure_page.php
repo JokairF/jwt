@@ -4,7 +4,7 @@ session_start();
 
 require __DIR__ . "vendor/autoload.php";
 
-use Firebase\JWT;
+use Firebase\JWT\JWT;
 use Firebase\Key;
 
 if (!isset($_SESSION["username"]) || $_SESSION["username"] == "") {
